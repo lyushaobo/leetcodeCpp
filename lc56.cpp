@@ -4,10 +4,6 @@
 
 using namespace std;
 
-bool cmp(vector<int> a1, vector<int> a2) {
-    return a1[0] < a2[0];
-}
-
 int main() {
     int count;
     cin >> count;
@@ -21,7 +17,7 @@ int main() {
         }
         int n = intervals.size();
         vector<vector<int>> ans;
-        sort(intervals.begin(), intervals.end(), cmp);
+        sort(intervals.begin(), intervals.end());
         int beginNum = intervals[0][0], endNum = intervals[0][1];
         for (int i = 1; i < n; i++) {
             if (endNum >= intervals[i][0]) {
