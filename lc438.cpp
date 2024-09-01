@@ -49,7 +49,7 @@ int main()
                 if(p_map[s[i]]-- == 0) {
                     p_char++;
                 }
-                if(p_map[s[i-p_size]] == 0) {
+                if(p_map[s[i]] == 0) {
                     p_char--;
                 }
             }
