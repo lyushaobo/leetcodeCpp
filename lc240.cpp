@@ -19,19 +19,16 @@ int main() {
         cin >> target;
         int m = matrix.size();
         int n = matrix[0].size();
+        int x = 0, y = n-1;
         bool ans = false;
-        int left = 0, right = m * n -1;
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            int i = mid / n;
-            int j = mid % n;
-            if (matrix[i][j] == target) {
-                ans = true;
-                break;
-            } else if (matrix[i][j] > target) {
-                right = mid - 1;
-            } else left = mid + 1;
-        }
+        while (x < m && y >= 0) {
+            if (matrix[x][y] == target) {
+                ans =  true;
+            }
+            if (matrix[x][y] > target) {
+                y--;
+            } else x++;
+        } 
         cout << ans;
     }
 }
